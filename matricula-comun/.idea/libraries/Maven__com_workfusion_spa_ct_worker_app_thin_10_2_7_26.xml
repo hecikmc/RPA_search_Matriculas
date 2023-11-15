@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.workfusion.spa.ct:worker-app:thin:10.2.7.26">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/spa/ct/worker-app/10.2.7.26/worker-app-10.2.7.26-thin.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/spa/ct/worker-app/10.2.7.26/worker-app-10.2.7.26-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/spa/ct/worker-app/10.2.7.26/worker-app-10.2.7.26-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

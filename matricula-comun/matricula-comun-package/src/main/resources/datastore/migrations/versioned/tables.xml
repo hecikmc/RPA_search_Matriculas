@@ -1,0 +1,77 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_v1_0_0001" objectQuotingStrategy="LEGACY">
+        <createTable tableName="uc_uc_matricula_comun_transaction_v1_0">
+            <column defaultValueComputed="NEWID()" name="uuid" type="NVARCHAR(36)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="variation_id" type="BIGINT"/>
+            <column name="parent_uuid" type="NVARCHAR(36)"/>
+            <column name="start_time" type="datetime2"/>
+            <column name="end_time" type="datetime2"/>
+            <column name="status" type="NVARCHAR(36)"/>
+            <column name="error_status" type="NVARCHAR(36)"/>
+            <column name="start_bp_uuid" type="NVARCHAR(36)"/>
+            <column name="is_stp" type="int"/>
+            <column name="split_status" type="NVARCHAR(36)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_v1_0_0002" objectQuotingStrategy="LEGACY">
+        <createTable tableName="uc_uc_matricula_comun_stage_v1_0">
+            <column defaultValueComputed="NEWID()" name="uuid" type="NVARCHAR(36)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="NVARCHAR(256)"/>
+            <column name="description" type="NVARCHAR(4000)"/>
+            <column name="stage_order" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_v1_0_0003" objectQuotingStrategy="LEGACY">
+        <createTable tableName="uc_uc_matricula_comun_transaction_stage_log_v1_0">
+            <column defaultValueComputed="NEWID()" name="uuid" type="NVARCHAR(36)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="stage_id" type="NVARCHAR(36)">
+                <constraints foreignKeyName="fk_uc_uc_matricula_comun_transaction_stage_log_v1_0_uc_uc_matricula_comun_stage_v1_0" nullable="false" referencedColumnNames="uuid" referencedTableName="uc_uc_matricula_comun_stage_v1_0"/>
+            </column>
+            <column name="transaction_uuid" type="NVARCHAR(36)">
+                <constraints foreignKeyName="uc_uc_matricula_comun_transaction_stage_log_v1_0_uc_uc_matricula_comun_transaction_v1_0" nullable="false" referencedColumnNames="uuid" referencedTableName="uc_uc_matricula_comun_transaction_v1_0"/>
+            </column>
+            <column name="bp_uuid" type="NVARCHAR(36)"/>
+            <column name="timestamp" type="DATE"/>
+            <column name="type" type="NVARCHAR(36)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_v1_0_0004" objectQuotingStrategy="LEGACY">
+        <createTable tableName="uc_uc_matricula_comun_config_v1_0">
+            <column defaultValueComputed="NEWID()" name="uuid" type="NVARCHAR(36)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="variation_id" type="BIGINT"/>
+            <column name="name" type="NVARCHAR(450)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="NVARCHAR(4000)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_v1_0_0005" objectQuotingStrategy="LEGACY">
+        <createTable tableName="uc_uc_matricula_comun_ocr_cache_v1_0">
+            <column name="cache_key" type="NVARCHAR(256)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="document_xml_link" type="NVARCHAR(2048)"/>
+            <column name="pages" type="INT"/>
+            <column name="meta_info_pages" type="NVARCHAR(4000)"/>
+            <column name="meta_info_xml_url" type="NVARCHAR(2048)"/>
+            <column name="creation_time" type="NVARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_{uc_code}_v1_0_0006" objectQuotingStrategy="LEGACY">
+        <modifyDataType columnName="split_status" newDataType="NVARCHAR(255)" tableName="uc_uc_matricula_comun_transaction_v1_0"/>
+    </changeSet>
+    <changeSet author="ODF2 archetype" id="uc_matricula_comun_{uc_code}_v1_0_0007" objectQuotingStrategy="LEGACY">
+        <addColumn tableName="uc_uc_matricula_comun_transaction_v1_0">
+            <column name="skip_until" type="NVARCHAR(256)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

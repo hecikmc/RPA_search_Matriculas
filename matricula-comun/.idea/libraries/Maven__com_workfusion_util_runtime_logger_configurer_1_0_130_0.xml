@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.workfusion.util:runtime-logger-configurer:1.0.130.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/util/runtime-logger-configurer/1.0.130.0/runtime-logger-configurer-1.0.130.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/util/runtime-logger-configurer/1.0.130.0/runtime-logger-configurer-1.0.130.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/util/runtime-logger-configurer/1.0.130.0/runtime-logger-configurer-1.0.130.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

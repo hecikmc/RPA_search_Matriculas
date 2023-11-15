@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.workfusion.studio:bot-execution-broker:10.2.7.25">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/studio/bot-execution-broker/10.2.7.25/bot-execution-broker-10.2.7.25.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/studio/bot-execution-broker/10.2.7.25/bot-execution-broker-10.2.7.25-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/workfusion/studio/bot-execution-broker/10.2.7.25/bot-execution-broker-10.2.7.25-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
